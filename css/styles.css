@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fredoka:wght@300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+*{
+    margin: 0; 
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    color: var(--grey-text); 
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+:root{
+    --white : #fefefe;
+    --light-grey : #f6f6f6;
+    --gey-discret-text : #8e8e8e;
+    --grey-text : #3a3a3a ;
+    
+    --light-green : #a8e6cf;
+    --hover-green : #b7d4b7;
+    --green : #67e468;
+    --deep-green : #3caf3c ;
+    --dark-green : #226622;
+
+    --light-pink : #f5eaf1 ;
+    --pink : #e48add;
+    --deep-pink : #c36cbc;
+    --dark-pink : #794374;
+
+}
+
+h1, h2, h3{
+    font-family: "Fredoka", sans-serif;
+}
+
+h2{
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--deep-pink);
+}
+
+p{
+    font-family: "Lato", sans-serif;
+}
+
+.btn, nav *{
+    font-family: "Barlow", sans-serif;
+}
+
+.btn{
+    border-radius: 12px;
+    padding : 10px 17px;
+    font-size: 18px;
+}
+
+.adjectives-span{
+    font-weight: 400;
+}
+
+header, footer > div, #profile > div, #projects{
+    margin : 0 auto; 
+    max-width: 1440px;
+}
+
+
+header{
+    padding : 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > a{
+        font-family: "Baloo 2", sans-serif;
+        letter-spacing: 5px;
+        color : var(--deep-pink); 
+        font-size: 35px;
+        font-weight: 600;
+    }
+
+    ul{
+        display: flex;
+        gap : 25px;
+        
+
+        a{
+            color: var(--pink);
+            font-weight: 500;
+            font-size: 18px;
+            padding-bottom : 3px;
+            position: relative; 
+
+            .hover-bar{
+                height : 2px; 
+                width : 0px; 
+                background-color : var(--deep-pink); 
+                position: absolute;
+                bottom : 0; 
+                left : 0 ;
+            }
+
+            &:hover {
+                color: var(--hover-green);
+
+                .hover-bar {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+#profile{
+    position: relative;
+    padding : 90px 15px;
+
+    &::before{
+        background-color: #f5eaf1;
+        opacity: 0.8;
+        background-image:  radial-gradient(#e48add 0.8px, transparent 0.8px), radial-gradient(#e48add 0.8px, #f5eaf1 0.8px);
+        background-size: 32px 32px;
+        background-position: 0 0,16px 16px;
+        position: absolute;
+        top:0; 
+        left : 0;
+        width: 100%;
+        height: 100%;
+        content : "";  
+        overflow: hidden;
+        z-index:-1;
+    }
+
+    > div{
+        display: flex;
+        gap : 50px;
+        align-items: center;
+        justify-content: space-around;
+
+        > div{
+            flex : 1
+        }
+
+        > div:first-of-type{
+            text-align: end;
+
+            h1{
+                font-size: 90px;
+            }
+
+            p{
+                font-size: 30px;
+            }
+
+            div{
+                margin-top : 15px;
+                display: flex;
+                gap : 30px;
+                justify-content: end;
+
+                a:first-of-type{
+                    background: linear-gradient(150deg, var(--deep-pink), var(--pink));
+                    color : var(--light-grey);
+
+                    i{
+                        padding-left:  5px;
+                        color: var(--light-grey);
+                    }
+
+                    &:hover i{
+                        padding-left:  15px;
+                        color : var(--dark-pink);
+                    }
+                } 
+
+                a:last-of-type{
+                    background-color: var(--light-green);
+                    color :var(--dark-green);
+
+                    i{
+                        padding-left:  5px;
+                        color :#52a352
+                    }
+
+                    &:hover i{
+                        color :var(--pink)
+                    }
+
+                    &:hover{
+                        background-color :#ffcbec ; 
+                        color :var(--dark-pink)
+                    }
+                }  
+            }
+        }
+    
+        img{
+            width : 100%;
+            border-radius: 12px;
+            filter: brightness(140%);
+        }
+
+        #border-pic{
+            background : radial-gradient(#d549c8, #f5eaf1);
+            padding : 25px; 
+            width: 50%;
+            border-radius: 12px;
+            margin : 0 auto;
+            position: relative;
+
+            &::before {
+                content: "</ >";
+                position: absolute;
+                font-size: 45px;
+                z-index: 1;
+                color: #fff;
+                background: linear-gradient(135deg, #a8e6cf, #56ab91);
+                border: 2px solid var(--hover-green);
+                padding: 8px 33px;
+                border-radius: 45px;
+                font-weight: 600;
+                font-family: "Baloo 2", sans-serif;
+                bottom: 40px;
+                right: -20px;
+                box-shadow: 0 4px 20px rgba(103, 228, 104, 0.3); 
+                transition: all 0.3s ease;
+            }
+        }
+
+        #border-pic:hover::before {
+            opacity: 0.8;
+            bottom : 30px; 
+            right : -30px; 
+            transform: scale(0.90);
+        }
+
+        #border-pic:hover img{
+            transform: scale(1.1);
+        }
+    }
+}
+
+#projects{
+    padding : 60px 15px;
+
+    > p{
+        margin-top :5px
+    }
+
+    > div{
+        display: flex;
+        gap : 40px;
+        padding : 50px 0;
+        max-width: 1300px;
+        margin : 0 auto;
+
+        article{
+            background-color: var(--light-pink);
+            padding : 20px 30px;
+            border-radius: 12px;
+
+            img{
+                width : 100%;
+                border-radius: 12px 12px 0 0;
+            }
+
+            h3{
+                font-size: 30px;
+                margin-top : 5px; 
+                color : #916d8e;
+                font-weight: 500;
+                margin-bottom: 15px;
+            }
+
+            p{
+                margin-top : -1px;
+                margin-bottom : 16px;
+                color : var(--gey-discret-text)
+            }
+
+            h3, p, > div{
+                padding-left : 9px
+            }
+
+            .skill-project-span{
+                background-color: var(--light-green);
+                padding : 4px 8px;
+                margin-right : 10px;
+                border-radius: 12px;
+                color : var(--dark-green);
+                font-weight: 700;
+            }
+
+            div{
+                display: flex;
+                justify-content: center;
+                gap : 25px;
+
+                a:first-of-type{
+                    background: linear-gradient(150deg, var(--deep-pink), #ffffff);
+                    color : #720b69; 
+                    font-weight: 600;
+
+                    &:hover{
+                        background: linear-gradient(150deg, #ffffff, var(--deep-pink));
+                    }
+                }
+
+                a:last-of-type{
+                    background: linear-gradient(150deg, var(--deep-pink), var(--pink));
+                    font-weight: 500;
+                    color : var(--light-pink);
+                }
+            }
+        }        
+    }
+}
+    
+footer{
+    background-color: var(--light-pink);
+    padding : 35px 15px;
+
+    div{
+        display: flex;
+        justify-content: space-between;
+
+        ul{
+            display: flex;
+            gap : 15px;
+
+            i{
+                color : var(--deep-pink);
+
+                &:hover{
+                    color : var(--pink);
+                }
+            }
+        }
+    }
+    
+}
