@@ -8,6 +8,7 @@
     color: var(--grey-text); 
     transition: all 0.2s ease;
     box-sizing: border-box;
+    object-fit: cover;
 }
 
 :root{
@@ -57,7 +58,7 @@ p{
     font-weight: 400;
 }
 
-header, footer > div, #profile > div, #projects{
+header, footer > div, #profile > div, #projects, #skills > div{
     margin : 0 auto; 
     max-width: 1440px;
 }
@@ -109,7 +110,8 @@ header{
     }
 }
 
-#profile{
+#profile, #skills{
+  
     position: relative;
     padding : 90px 15px;
 
@@ -129,6 +131,9 @@ header{
         z-index:-1;
     }
 
+}
+
+#profile{
     > div{
         display: flex;
         gap : 50px;
@@ -188,7 +193,7 @@ header{
                         background-color :#ffcbec ; 
                         color :var(--dark-pink)
                     }
-                }  
+                }
             }
         }
     
@@ -238,6 +243,12 @@ header{
     }
 }
 
+@keyframes opacityA{
+    0%{opacity : 0}
+    100%{opacity : 1}
+}
+
+
 #projects{
     padding : 60px 15px;
 
@@ -247,41 +258,77 @@ header{
 
     > div{
         display: flex;
-        gap : 40px;
+        justify-content: space-between;
         padding : 50px 0;
         max-width: 1300px;
         margin : 0 auto;
+        gap : 50px;
 
         article{
-            background-color: var(--light-pink);
-            padding : 20px 30px;
-            border-radius: 12px;
+            background-color:  var(--light-pink);
+            box-shadow: 0 6px 20px #d549c885;
+            padding: 30px 25px 40px 25px;
+            border-radius: 100px 100px 0 0;
+            max-width: 350px;
+            min-width: 333px;
+            border: 6px dashed #ffd3fb;
+
+            &:hover{
+                transform: rotate(1deg);
+                background-color: #f6fff6;
+            }
+
+            &:hover h3::before, &:hover h3::after{
+                display: inline;
+                animation: opacityA 0.5s ease;
+                color : var(--hover-green)
+            }
 
             img{
                 width : 100%;
-                border-radius: 12px 12px 0 0;
+                border-radius: 70px 70px 0 0;
+                border: 3px solid #ffd3fb;
+                height : 170px; 
             }
 
             h3{
-                font-size: 30px;
                 margin-top : 5px; 
                 color : #916d8e;
                 font-weight: 500;
                 margin-bottom: 15px;
+                font-size: 30px;
+                border-bottom: 2px solid #ffd3fb;
+                padding-bottom: 6px;
+                text-align: center;
+            }
+
+            h3::before{
+                content : "</ "; 
+                display: none;
+            }
+
+            h3::after{
+                content : " >"; 
+                display: none;
             }
 
             p{
                 margin-top : -1px;
                 margin-bottom : 16px;
-                color : var(--gey-discret-text)
+                color : var(--gey-discret-text);
             }
 
-            h3, p, > div{
+            p{
                 padding-left : 9px
             }
 
+            .skills-line {
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+
             .skill-project-span{
-                background-color: var(--light-green);
+                background: linear-gradient(135deg, #a8e6cf, #71c8ad);
                 padding : 4px 8px;
                 margin-right : 10px;
                 border-radius: 12px;
@@ -295,25 +342,27 @@ header{
                 gap : 25px;
 
                 a:first-of-type{
-                    background: linear-gradient(150deg, var(--deep-pink), #ffffff);
+                    background: linear-gradient(150deg, #ffffff, var(--deep-pink));
                     color : #720b69; 
                     font-weight: 600;
-
-                    &:hover{
-                        background: linear-gradient(150deg, #ffffff, var(--deep-pink));
-                    }
+                    border: 1px solid #ffc3f9;
                 }
 
                 a:last-of-type{
-                    background: linear-gradient(150deg, var(--deep-pink), var(--pink));
+                    background: linear-gradient(150deg, #74276e, var(--pink));
                     font-weight: 500;
                     color : var(--light-pink);
+                    border: 1px solid #6e3b69;
+                }
+
+                a:hover{
+                    transform: scale(0.95);
                 }
             }
         }        
     }
 }
-    
+
 footer{
     background-color: var(--light-pink);
     padding : 35px 15px;
