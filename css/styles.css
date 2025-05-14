@@ -34,6 +34,12 @@ h1, h2, h3{
     font-family: "Fredoka", sans-serif;
 }
 
+h3{
+    font-size: 30px;
+    font-weight: 500;
+    color : #916d8e;
+}
+
 h2{
     font-size: 40px;
     font-weight: 600;
@@ -58,7 +64,7 @@ p{
     font-weight: 400;
 }
 
-header, footer > div, #profile > div, #projects, #skills > div{
+header, footer > div, #profile > div, #projects, #skills > div, #contact{
     margin : 0 auto; 
     max-width: 1440px;
 }
@@ -113,7 +119,7 @@ header{
 #profile, #skills{
   
     position: relative;
-    padding : 90px 15px;
+    
 
     &::before{
         background-color: #f5eaf1;
@@ -134,6 +140,7 @@ header{
 }
 
 #profile{
+    padding : 90px 15px;
     > div{
         display: flex;
         gap : 50px;
@@ -211,7 +218,7 @@ header{
             margin : 0 auto;
             position: relative;
 
-            &::before {
+            /* &::before {
                 content: "</ >";
                 position: absolute;
                 font-size: 45px;
@@ -227,19 +234,25 @@ header{
                 right: -20px;
                 box-shadow: 0 4px 20px rgba(103, 228, 104, 0.3); 
                 transition: all 0.3s ease;
-            }
+            } */
         }
 
-        #border-pic:hover::before {
+        /* #border-pic:hover::before {
             opacity: 0.8;
             bottom : 30px; 
             right : -30px; 
             transform: scale(0.90);
-        }
+        } */
 
         #border-pic:hover img{
-            transform: scale(1.1);
+            transform: scale(0.95);
         }
+
+        #border-pic:hover button{
+            transform: scale(1.08);
+        }
+
+
     }
 }
 
@@ -280,7 +293,7 @@ header{
 
             &:hover h3::before, &:hover h3::after{
                 display: inline;
-                animation: opacityA 0.5s ease;
+                animation: opacityA 0.5s ease forwards;
                 color : var(--hover-green)
             }
 
@@ -293,23 +306,21 @@ header{
 
             h3{
                 margin-top : 5px; 
-                color : #916d8e;
-                font-weight: 500;
                 margin-bottom: 15px;
-                font-size: 30px;
                 border-bottom: 2px solid #ffd3fb;
                 padding-bottom: 6px;
+                margin-left :-9px;
                 text-align: center;
             }
 
             h3::before{
                 content : "</ "; 
-                display: none;
+                opacity: 0;
             }
 
             h3::after{
                 content : " >"; 
-                display: none;
+                opacity: 0;
             }
 
             p{
@@ -363,6 +374,196 @@ header{
     }
 }
 
+#skills{
+    padding : 60px 15px 100px 15px;
+    > div > div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap : 40px;
+        flex-wrap: wrap;
+        padding-top : 50px;
+        max-width: 1300px;
+        margin : 0 auto;
+
+        article{
+            background-color: var(--light-pink);
+            box-shadow: 0 6px 20px #d549c885;
+            flex : 1;
+            border-radius: 53px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding : 50px 0;
+
+            i{
+                font-size: 50px;
+                margin-bottom : 5px;
+                color : var(--deep-pink);
+            }
+            
+            h3{
+                font-size: 30px;
+                color : var(--gey-discret-text)
+            }
+
+            &:hover{
+                transform: scale(1.02);
+                background-color: #f6fff6;
+            }
+
+            &:hover i{
+                color : var(--hover-green)
+            }
+
+            &:hover h3{
+                color : #916d8e;
+            }
+        }
+    }
+}
+
+#contact{
+    padding : 60px 15px 100px 15px;
+
+    h2{
+        text-align: center;
+        margin-bottom : 30px;
+    }
+
+    > div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1000px;
+        margin : 0 auto;
+        position: relative;
+        padding : 50px;
+    
+        &::before{
+            background-color: #f5eaf1;
+            opacity: 0.8;
+            background-image:  radial-gradient(#e48add 0.8px, transparent 0.8px), radial-gradient(#e48add 0.8px, #f5eaf1 0.8px);
+            background-size: 32px 32px;
+            background-position: 0 0,16px 16px;
+            position: absolute;
+            top:0; 
+            left : 0;
+            width: 100%;
+            height: 100%;
+            content : "";  
+            overflow: hidden;
+            z-index:-1;
+            border-radius: 25px;
+            border : 5px dashed #d549c885;
+        }
+
+        >div{
+            flex : 1;
+
+            li{
+                margin-top : 25px; 
+                font-size: 17px;
+                
+
+                i{
+                    padding-right : 8px;
+                    color : var(--deep-pink);
+
+                    &:hover{
+                        color : var(--light-green)
+                    }
+                }
+
+                &:first-of-type{
+                    margin-top : 0px; 
+
+                    i{
+                        padding-right : 12px;
+                    }
+                }
+
+                &:last-of-type{
+                    display: flex;
+                    align-items: center;
+                    gap : 15px;
+
+                    span{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap : 15px;
+                        background-color: #ebbfdb;
+                        padding : 9px 27px 6px 29px; 
+                        border-radius: 25px;
+                    }
+                }
+
+                
+            }
+
+            .social-li:hover{
+                color : var(--dark-pink);
+
+                i{
+                    color : var(--hover-green)
+                }
+            }
+        }
+
+        form{
+            flex :1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap : 25px;
+
+            input, textarea{
+                width : 70%;
+                background-color : #ffecf7;
+                border : 1px var(--gey-discret-text) solid; 
+                border-radius: 12px;
+                padding : 8px 0 8px 8px;
+                font-size: 15px;
+                color : var(--dark-pink);
+
+                &::placeholder{
+                    font-size: 15px;
+                    font-family: "Lato", sans-serif;
+                    color: var(--gey-discret-text);
+                }
+            }
+
+            textarea{
+                padding-bottom : 60px
+            }
+
+            button{
+                background-color: var(--deep-pink);
+                /* background: linear-gradient(150deg, var(--deep-pink), var(--pink)); */
+                color: var(--light-grey);
+                border : none; 
+
+                i{
+                    color :var(--light-grey); 
+                    padding-left : 9px;
+                }
+
+                &:hover i{
+                    color :var(--deep-pink)
+                }
+
+                &:hover{
+                    background-color : var(--light-green) ; 
+                    color :var(--dark-green)
+                }
+            }
+        }
+    }
+}
+
 footer{
     background-color: var(--light-pink);
     padding : 35px 15px;
@@ -379,10 +580,42 @@ footer{
                 color : var(--deep-pink);
 
                 &:hover{
-                    color : var(--pink);
+                    color : var(--hover-green)
                 }
             }
         }
     }
     
+}
+
+/*CAROUSEL*/
+.slider {
+    position: relative;
+    }
+    
+
+.prev, .next {
+    position: absolute;
+    width : 60px;
+    cursor: pointer;
+    top : 35%;
+    font-size: 35px;
+    z-index: 1;
+    color: #fff;
+    background: linear-gradient(135deg, #a8e6cf, #56ab91);
+    border: 2px solid var(--hover-green);
+    border-radius: 45px;
+    font-weight: 600;
+    font-family: "Baloo 2", sans-serif;
+
+    box-shadow: 0 4px 20px rgba(103, 228, 104, 0.3); 
+    transition: all 0.3s ease;
+}
+
+.prev {
+    left: -50px; 
+}
+
+.next { 
+    right: -50px; 
 }
